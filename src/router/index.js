@@ -1,23 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import HomeView from '../views/HomeView.vue'
 import Login from '../views/Login.vue'
-import BlogDetail from '../views/BlogDetail.vue'
+import Blogs from '../views/Blogs.vue'
 import BlogEdit from '../views/BlogEdit.vue'
+import BlogDetail from '../views/BlogDetail.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
     {
         path: '/',
-        // name: 'home',
-        // component: HomeView
         name: 'Index',
-        redirect: {name: 'Blog'}
+        redirect: {name: 'Blogs'}
     },
     {
-        // path: '/about',
-        // name: 'about',
+        path: '/blogs',
+        name: 'Blogs',
+        component: Blogs
+    },
+    {
         path: '/login',
         name: 'Login',
         component: Login
@@ -26,12 +27,6 @@ const routes = [
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         // component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-    },
-    {
-        path: '/blogs',
-        name: 'Blogs',
-        // 懒加载
-        component: () => import('../views/Blogs.vue')
     },
     {
         path: '/blog/add', // 注意放在 path: '/blog/:blogId'之前

@@ -80,7 +80,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           // 提交逻辑
-          this.$axios.post('http://localhost:8081/login', this.ruleForm).then((res) => {
+          this.$api.post('http://localhost:8082/login', this.ruleForm).then((res) => {
             const token = res.headers['authorization']
             _this.$store.commit('SET_TOKEN', token)
             _this.$store.commit('SET_USERINFO', res.data.data)
@@ -99,7 +99,7 @@ export default {
   mounted() {
     this.$notify({
       title: '看这里：',
-      message: '关注公众号：MarkerHub，回复【vueblog】，领取项目资料与源码',
+      message: '这是一个基于Vue+SpringBoot+Mybatis的个人博客系统，前端采用Vue+ElementUI，后端采用SpringBoot+Mybatis，数据库采用MySQL，前后端分离，前端代码开源，后端代码开源。',
       duration: 1500
     });
   }

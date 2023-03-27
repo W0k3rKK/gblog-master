@@ -35,7 +35,7 @@ export default {
   methods: {
     logout() {
       const _this = this
-      _this.$axios.get("/logout", {
+      _this.$api.get("/logout", {
         headers: {
           "Authorization": localStorage.getItem("token")
         }

@@ -6,6 +6,7 @@ export const post = (url, data) => {
   Object.defineProperty(data, 'button', {enumerable: false})
   Object.defineProperty(data, 'createTime', {enumerable: false})
 
+
   return axios({
     url: url,
     method: 'post',

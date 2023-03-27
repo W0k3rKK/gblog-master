@@ -12,6 +12,18 @@ export const post = (url, data) => {
   });
 }
 
+// get请求
+export const get = (url, data) => {
+  data = data || {};
+  Object.defineProperty(data, 'button', {enumerable: false})
+  Object.defineProperty(data, 'createTime', {enumerable: false})
+  return axios({
+    url: url,
+    method: 'get',
+    data
+  });
+}
+
 // post请求
 export const getUrl = (url) => {
   return axios({
@@ -228,6 +240,7 @@ export const saveFile = (res) => {
 }
 
 export default {
+  get,
   post,
   login,
   logout,
